@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Baldur's Gate 3</title>
+    <link rel="stylesheet" href="{% static 'polls/css/Style.css' %}" />
+    <script src="{% static 'polls/js/Script.js' %}" defer></script>
+</head>
+<body class="con-imagen">
+
+    <nav id="menu">
+        <a href="#historia">Historia</a>
+        <a href="#personajes">Personajes Principales</a>
+        <a href="#razas">Razas</a>
+        <a href="#clases">Clases</a>
+        <a href="#crear-personaje">Crear Personaje</a>
+        <a href="{% url 'index' %}">Regresar a pagina principal</a>
+    </nav>
+
+    <section id="historia">
+        <h1>Historia Baldur's Gate 3</h1>
+        <p>Baldur’s Gate 3 es un juego de rol ambientado en el universo de Dungeons & Dragons, desarrollado por Larian Studios. La historia comienza con el personaje del jugador secuestrado por un grupo de mind flayers, criaturas psiónicas que implantan un parásito en el cerebro del protagonista. Este parásito amenaza con convertirlo en uno de ellos, pero también le otorga misteriosos poderes. Tras escapar del naufragio de la nave de los mind flayers, el jugador debe formar alianzas con otros personajes infectados mientras explora la Costa de la Espada, una región rica en historia, magia y conflicto. A medida que avanza, descubre una conspiración más grande que involucra cultos oscuros, dioses antiguos y fuerzas que amenazan con destruir el equilibrio del mundo. La narrativa se desarrolla a través de decisiones morales complejas, combates tácticos por turnos y relaciones profundas con compañeros, cada uno con su propia historia y motivaciones. Las elecciones del jugador afectan directamente el desarrollo de la historia, permitiendo múltiples finales y caminos distintos. Baldur’s Gate 3 es una continuación espiritual de la saga clásica, pero está diseñada tanto para veteranos de D&D como para nuevos jugadores, ofreciendo una experiencia inmersiva, rica en historia y completamente adaptada a la era moderna de los videojuegos.</p>
+    </section>
+
+    <section id="personajes">
+        <h1>Personajes Principales</h1>
+        <div>
+            <img id="Astarion" src="{% static 'polls/Imagenes/Astarion.png' %}" alt="Astarion" />
+            <img id="ShadowHeart" src="{% static 'polls/Imagenes/ShadowHeart.png' %}" alt="ShadowHeart" />
+            <img id="Laezel" src="{% static 'polls/Imagenes/Laezel.png' %}" alt="Lae'zel" />
+            <img id="Gale" src="{% static 'polls/Imagenes/Gale.png' %}" alt="Gale" />
+        </div>
+        <div id="detalle" style="display: none;"></div>
+    </section>
+
+    <section id="razas">
+        <h1>Razas</h1>
+        <div class="razas-container">
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Human.png' %}" alt="Humanos" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/humano.png' %}" alt="Icono Humano" />
+                    <p>Los humanos son versátiles, ambiciosos y adaptables en la Costa de la Espada.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Elf.png' %}" alt="Elfos" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/elfo.png' %}" alt="Icono Elfo" />
+                    <p>Los elfos son longevos y están profundamente conectados con la magia.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Drow.png' %}" alt="Drows" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/drow.png' %}" alt="Icono Drow" />
+                    <p>Los Drows habitan en el inframundo y son conocidos por su sigilo.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Half-Elf.png' %}" alt="SemiElfos" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/semielfo.png' %}" alt="Icono Semielfo" />
+                    <p>Los semielfos combinan el espíritu humano con la gracia élfica.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Half-Orc.png' %}" alt="Orcos" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/Orco.png' %}" alt="Icono Orco" />
+                    <p>Los medio orcos destacan por su fuerza bruta y resistencia.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Halfling.png' %}" alt="Medianos" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/Mediano.png' %}" alt="Icono Mediano" />
+                    <p>Ágiles y discretos, los medianos suelen evitar el conflicto.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Dwarf.png' %}" alt="Enanos" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/Enano.png' %}" alt="Icono Enano" />
+                    <p>Expertos artesanos y guerreros, los enanos valoran el honor.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Gnome.png' %}" alt="Gnomos" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/Gnomo.png' %}" alt="Icono Gnomo" />
+                    <p>Ingeniosos y curiosos, los gnomos exploran la magia y la mecánica.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Tiefling.png' %}" alt="Tieflings" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/Tiefling.png' %}" alt="Icono Tiefling" />
+                    <p>Los tieflings portan un linaje infernal que influye en su destino.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Githyanki.png' %}" alt="Githyankis" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/Githyanki.png' %}" alt="Icono Githyanki" />
+                    <p>Guerreros extraplanares criados para cazar mind flayers.</p>
+                </div>
+            </div>
+            <div class="raza">
+                <img src="{% static 'polls/Imagenes/Razas/150px-Race_Dragonborn.png' %}" alt="Dragonborns" />
+                <div class="tooltip">
+                    <img src="{% static 'polls/Imagenes/dragonborn.png' %}" alt="Icono Dragonborn" />
+                    <p>Descendientes de dragones, poderosos y con aliento elemental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clases">
+        <h1>Clases</h1>
+        <div class="clases-container">
+            <div class="clase">
+                <img src="{% static 'polls/Imagenes/Clases/180px-Class_Barbarian_Badge_Icon.png' %}" alt="Bárbaro" />
+                <div class="tooltip">Guerrero feroz que canaliza su furia para causar gran daño.</div>
+            </div>
+            <div class="clase">
+                <img src="{% static 'polls/Imagenes/Clases/180px-Class_Bard_Badge_Icon.png' %}" alt="Bardo" />
+                <div class="tooltip">Artista mágico que inspira a aliados con música encantada.</div>
+            </div>
+            <div class="clase">
+                <img src="{% static 'polls/Imagenes/Clases/180px-Class_Cleric_Badge_Icon.png' %}" alt="Clérigo" />
+                <div class="tooltip">Canaliza magia divina para curar y castigar enemigos.</div>
+            </div>
+            <div class="clase">
+                <img src="{% static 'polls/Imagenes/Clases/180px-Class_Druid_Badge_Icon.png' %}" alt="Druida" />
+                <div class="tooltip">Guardían de la naturaleza capaz de transformarse en animales.</div>
+            </div>
+            <!-- Resto de clases se hace igual -->
+        </div>
+    </section>
+
+    <section id="crear-personaje">
+        <h1>Crear Personaje</h1>
+        <form id="form-personaje">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="genero">Género:</label>
+            <select id="genero" required>
+                <option value="">Selecciona</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+
+            <label for="raza">Raza:</label>
+            <select id="raza" required>
+                <option value="">Selecciona</option>
+                <option value="Humano">Humano</option>
+                <option value="Elfo">Elfo</option>
+                <option value="Drow">Drow</option>
+                <option value="Semielfo">Semielfo</option>
+                <option value="Orco">Orco</option>
+                <option value="Mediano">Mediano</option>
+                <option value="Enano">Enano</option>
+                <option value="Gnomo">Gnomo</option>
+                <option value="Tiefling">Tiefling</option>
+                <option value="Githyanki">Githyanki</option>
+                <option value="Dragonborn">Dragonborn</option>
+            </select>
+
+            <label for="clase">Clase:</label>
+            <select id="clase" required>
+                <option value="">Selecciona</option>
+                <option value="Barbaro">Barbaro</option>
+                <option value="Bardo">Bardo</option>
+                <option value="Clérigo">Clérigo</option>
+                <option value="Druida">Druida</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Monje">Monje</option>
+                <option value="Paladin">Paladin</option>
+                <option value="Explorador">Explorador</option>
+                <option value="Picaro">Picaro</option>
+                <option value="Hechicero">Hechicero</option>
+                <option value="Brujo">Brujo</option>
+                <option value="Mago">Mago</option>
+            </select>
+
+            <button type="submit">Visualizar Personaje</button>
+        </form>
+
+        <div id="resultado-personaje" style="display:none;">
+            <h2>Personaje Creado:</h2>
+            <p id="res-nombre"></p>
+            <p id="res-genero"></p>
+            <p id="res-raza"></p>
+            <p id="res-clase"></p>
+            <img id="img-raza" src="" alt="Avatar del personaje" style="max-width: 200px; border-radius: 10px; margin-top: 15px;">
+        </div>
+    </section>
+
+    <footer class="con-imagen">
+        <a href="https://www.facebook.com"><img src="{% static 'polls/Imagenes/logofacebook.png' %}" width="30"></a>
+        <a href="https://www.instagram.com"><img src="{% static 'polls/Imagenes/logoinstagram.png' %}" width="30"></a>
+    </footer>
+</body>
+</html>

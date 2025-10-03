@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Jade</title>
+  <link rel="stylesheet" href="{% static 'polls/css/Style.css' %}">
+  <script src="{% static 'polls/js/Script.js' %}" defer></script>
+</head>
+<body class="banco-jade">
+
+<header class="hd-jade">
+  <div style="font-size:20px; font-weight:bold;">Banco Jade</div>
+  <div class="botones">
+    <button class="ingresar" onclick="abrirBanco('ventana_ingreso')">Ingresar</button>
+    <button class="registrar" onclick="abrirBanco('ventana_registro')">Registrar</button>
+  </div>
+</header>
+
+<div id="ventana_ingreso" class="ventana">
+  <div class="contenido">
+    <span class="cerrar" onclick="cerrarBanco('ventana_ingreso')">&times;</span>
+    <h2>Ingreso</h2>
+    <form method="POST" action="{% url 'ingresar' %}">
+      {% csrf_token %}
+      <input type="text" name="usuario" placeholder="Usuario" required>
+      <input type="password" name="contraseña" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</div>
+
+<div id="ventana_registro" class="ventana">
+  <div class="contenido">
+    <span class="cerrar" onclick="cerrarBanco('ventana_registro')">&times;</span>
+    <h2>Registro</h2>
+    <form method="POST" action="{% url 'registrar' %}">
+      {% csrf_token %}
+      <input type="text" name="usuario" placeholder="Usuario" required>
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
+      <input type="password" name="contraseña" placeholder="Contraseña" required>
+      <button type="submit">Crear cuenta</button>
+    </form>
+  </div>
+</div>
+
+<div class="carrusel">
+  <img src="{% static 'polls/Imagenes/Bancojade.png' %}" class="activa">
+  <img src="{% static 'polls/Imagenes/Beneficios.png' %}">
+  <button class="flecha izquierda" onclick="cambiarBanco(-1)">&#10094;</button>
+  <button class="flecha derecha" onclick="cambiarBanco(1)">&#10095;</button>
+</div>
+
+<section class="sobre">
+  <h2>Sobre Nosotros</h2>
+  <p>En Banco Jade trabajamos día a día para brindar soluciones financieras confiables, seguras y modernas. Nuestra misión es acompañar a cada cliente en el cumplimiento de sus metas, ofreciendo servicios innovadores respaldados por tecnología de primer nivel.</p>
+  <p>Con más de 20 años de experiencia, garantizamos transparencia, atención personalizada y el más alto estándar en seguridad bancaria.</p>
+</section>
+
+<div id="toast" style="position:fixed;top:20px;right:20px;padding:10px 20px;background:red;color:white;border-radius:5px;display:none;z-index:9999;"></div>
+
+{% if messages %}
+  {% for message in messages %}
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        mostrarToast("{{ message|escapejs }}", "{{ message.tags }}");
+      });
+    </script>
+  {% endfor %}
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+<head>
+    <title>Pagina Personal</title>
+    <link rel="stylesheet" href="{% static 'polls/css/Style.css' %}">
+</head>
+<body class="sin-imagen">
+<header class="sin-imagen">
+    <h1>Mi pagina web</h1>
+</header>
+
+<div class="sobremi">
+    <div class="txt">
+        <h2>Sobre Mí</h2>
+        <p>Mi nombre completo es Ronald Daniel Rebolledo Cuevas, nací en Venezuela en el año 1995. Actualmente curso el tercer semestre de la carrera de Analista Programador. Me interesa especialmente el desarrollo web enfocado en el back-end, así como la lógica computacional y la resolución de problemas mediante herramientas tecnológicas. Mi objetivo es seguir fortaleciendo mis conocimientos y habilidades en programación para desempeñarme profesionalmente.</p>
+    </div>
+    <div class="img">
+        <img src="{% static 'polls/Imagenes/estudiante.png' %}" width="300">
+    </div>
+</div>
+
+<div class="hobbys">
+    <div class="txt">
+        <h2>Hobbys</h2>
+        <ul>
+            <li><strong>Cocinar:</strong> Me gusta cocinar en ocasiones para mi gente especial.</li>
+            <li><strong>Jugar videojuegos:</strong> Disfruto mucho jugar juegos online , especialmente en los que compito y me enfrento contra otras personas.</li>
+        </ul>
+    </div>
+    <div class="img">
+        <img src="{% static 'polls/Imagenes/cocinero.png' %}" width="150">
+        <img src="{% static 'polls/Imagenes/juegos.png' %}" width="150">
+    </div>
+</div>
+
+<div class="Evaluaciones">
+    <div class="txt">
+        <h2>Pequeñas paginas creadas para evaluaciones anteriores</h2>
+        <ul>
+            <li><a href="{% url 'paginabaldurs' %}"><strong>Pagina sobre Baldurs Gate 3</strong></a></li>
+            <li><a href="{% url 'paginabanco' %}"><strong>Pagina Banco Jade</strong></a></li>
+        </ul>
+    </div>
+</div>
+
+<footer class="sin-imagen">
+    <a href="https://www.facebook.com"><img src="{% static 'polls/Imagenes/logofacebook.png' %}" width="30"></a>
+    <a href="https://www.instagram.com"><img src="{% static 'polls/Imagenes/logoinstagram.png' %}" width="30"></a>
+</footer>
+</body>
+</html>
